@@ -206,6 +206,14 @@ public:
             cout << " ";
         }
     }
+
+	//сброс змейки в начальное состояние
+    void reset(int startX, int startY) {
+        length = 1;
+        currentDir = NONE;
+        body[0].X = startX;
+        body[0].Y = startY;
+    }
 };
 
 class Apple {
@@ -522,6 +530,8 @@ public:
 	//начало игры
     void startGame() {
         game_map.fill();
+		applesEaten = 0;
+		snake.reset(width / 2, height / 2);
         game_map.print(h);
         apple.spawn(game_map, snake);
         COORD head = snake.getHead();
