@@ -529,7 +529,7 @@ public:
 
 	//начало игры
     void startGame() {
-        game_map.fill();
+        this->game_map.fill();
 		applesEaten = 0;
 		snake.reset(width / 2, height / 2);
         game_map.print(h);
